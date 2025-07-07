@@ -6,10 +6,8 @@ const imgElem = document.querySelector('.img');
 const descElem = document.querySelector('.desc');
 
 //Chave API
-const lat =  -3.87821;
-const lon = -38.626
 const apiKey = '26c9976598df06e8f3d65e870d2b4a54';
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&lang=pt_br&units=metric`;
+
 
 
 //Função para conseguir a hora em tempo real
@@ -36,6 +34,7 @@ diaHoje()
 
 //Função para obter o clima de acordo com a região
 function obterClima(lat, lon){
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&lang=pt_br&units=metric`;
     fetch(apiUrl)
     .then(response => {
         if (!response.ok){
